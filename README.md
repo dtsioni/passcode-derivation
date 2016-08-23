@@ -21,5 +21,7 @@ Output of passcodeDerivation on this input:
 Each login attempt is a small piece of information about how those numbers compare to one another. I aggregate those pieces of information so that we know how each number compares to each other number. I then construct a string, which is 1 occurrence of each unique number in the input (the smallest possible passcode), and use my new rules of ordering to sort the string.
 
 This solution works for login attempts of any length, even login attempts of varying length.
+
 This solution doesn't work if there are duplicate digits in the passcode. Also if a number doesn't appear with at least every other number in at least one login attempt, it may not work because we won't have information about how those numbers compare.
+
 This solution could be made more efficient if we pruned the inputs to not process login attempts that try to teach us something we've already learned from a previous login attempt. For example, we could process significantly less login attempts if we only processed the first occurence of a pairing between two numbers, and not later occurrences. It could also be made more efficient if we didn't add duplicate digits to the rules arrays.
