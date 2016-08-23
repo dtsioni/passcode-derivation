@@ -20,10 +20,7 @@ function passcodeDerivation(input){
 		}
 	}
 	var passcode = num.split('').sort(function(fir, sec){
-		if(rules[fir]["greater_than"].indexOf(sec) != -1){
-			return true;
-		}
-		return false;
+		return rules[fir]["greater_than"].indexOf(sec) != -1;
 	});
 	return passcode;				
 }			
